@@ -13,7 +13,7 @@ import android.os.Parcelable;
 
 public class MyObject implements Serializable {
 
-    private String name;
+    private  String name;
     private int age;
 
     public ArrayList<String> address;

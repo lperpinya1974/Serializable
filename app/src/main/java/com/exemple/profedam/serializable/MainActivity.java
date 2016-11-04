@@ -18,12 +18,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-     if (savedInstanceState!=null)
+        setContentView(R.layout.activity_main);
+    if (savedInstanceState!=null)
+
      {
          myObject = (MyObject) savedInstanceState.getSerializable("myObject");
          rellenarTextView();
      }
-        setContentView(R.layout.activity_main);
+
+
 
 
 
@@ -42,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         {
             ArrayList<String> adreces = new ArrayList();
             adreces.addAll(Arrays.asList((new String[] {"C/Major 10", "C/Menor 12"})));
-             myObject = new MyObject("name", (new Random()).nextInt(100), adreces);
+             myObject = new MyObject("Pepe", (new Random()).nextInt(100), adreces);
              Toast.makeText(this, "objeto creado", Toast.LENGTH_SHORT).show();
         }
         if (view.getId() == R.id.btn_mostrar)
@@ -67,9 +70,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     @Override
+
     protected void onSaveInstanceState(Bundle outState) {
+
         outState.putSerializable("myObject", myObject);
         super.onSaveInstanceState(outState);
 
     }
+
 }
